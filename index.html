@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>GameOver</title>
+
+	<link rel="icon" href="images/icon.png" sizes="96x96">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/gameList.css">
+	<link rel="stylesheet" href="css/gameDetail.css">
+	<link rel="stylesheet" href="css/footer.css">
+
+	<script src="build/main.bundle.js" defer></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/" class="logo">
+				<img src="images/logo.png" />
+				<span>Game<em>Over</em></span>
+			</a>
+			<ul class="mainMenu">
+				<li><a href="/" class="pizzaListLink">Accueil</a></li>
+				<li><a href="/mes-favoris" class="favorisLink">Mes Favoris</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="pageContainer">
+		<div class="loader"></div>
+		<header class="pageTitle"></header>
+		<div class="searchBar" style="display:none">
+			<form class="searchForm">
+				<input type="text" placeholder="Search.." id="searchValue" autocomplete="off">
+				<input id="searchBtn" type="submit" value="Rechercher">
+				<br/>
+				<select class="genres">
+					<option value="">Tout</option>
+				</select>
+				<select class="sort">
+					<option value="">Pertinence</option>
+					<option value="-metacritic">Metacritic</option>
+					<option value="-released">Date de sortie</option>
+				</select>
+			</form>
+		</div>
+		<div class="pageContent"></div>
+	</section>
+	<footer>
+		<div>Powered by <a href="https://rawg.io">RAWG.io</a></div>
+	</footer>
+</body>
+</html>

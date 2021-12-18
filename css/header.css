@@ -1,0 +1,162 @@
+body > header {
+	position: relative;
+	background-image: url('../images/header-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 50px 10px 10px;
+	background-color: #121618;
+	z-index: 10;
+}
+body > header:before {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+body > header:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+	height: 0;
+	width: 100%;
+	background-image: linear-gradient(#121618, #121618), linear-gradient(-45deg, transparent 75%, #121618 75%), linear-gradient(45deg, transparent 75%, #121618 75%);
+	background-position: 0 0, 0 0, 0 0, 0 100%, 0 100%;
+	background-size: auto auto, 15px 15px, 15px 15px, 15px 15px, 15px 15px;
+	background-clip: padding-box, border-box, border-box, border-box, border-box;
+	background-origin: padding-box, border-box, border-box, border-box, border-box;
+	border: solid transparent;
+	border-width: 10px 0;
+	background-repeat: repeat, repeat-x, repeat-x, repeat-x, repeat-x;
+}
+
+body > header > nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body > header .logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #eee;
+	text-decoration: none;
+}
+body > header .logo img {
+	width: 120px;
+	filter: drop-shadow(0 0 0.75rem rgb(255, 150, 150));
+}
+body > header .logo span {
+	font-family: GravitasOne;
+	text-transform: uppercase;
+	font-size: 27px;
+	letter-spacing: 4px;
+	color: rgb(149, 78, 255);
+	text-shadow: 0px 0px 20px rgb(149, 78, 255);
+}
+body > header .logo em {
+	font-size: 22px;
+	font-style: normal;
+	color: rgb(0, 200, 13);
+	text-shadow: 0px 0px 10px rgb(0, 200, 13);
+}
+body > header .logo small {
+	font-family: OpenSansCondensed;
+	font-size: 14px;
+	letter-spacing: 5px;
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #999;
+}
+body > header .logo small:before,
+body > header .logo small:after {
+	content: '〜';
+	display: inline-flex;
+	/* padding: 0 10px; */
+}
+body > header .logo small:after {
+	transform: scaleX(-1);
+}
+body > header .logo img,
+body > header .logo span,
+body > header .logo small {
+	transition: all .7s cubic-bezier(.190, 1.000, .220, 1.000);
+	transform: translateY(0);
+}
+body > header .logo:hover img,
+body > header .logo:hover span,
+body > header .logo:hover small {
+	transform: translateY(-4px);
+}
+body > header .logo:hover img {
+	transform: translateY(-6px) scale(1.1);
+	transition-timing-function: cubic-bezier(.12,1.93,0,.91);
+	transition-duration: 1.1s;
+}
+
+body > header .logo small {
+	transition-delay: .075s;
+}
+
+body > header ul.mainMenu {
+	list-style-type: none;
+	margin: 20px 0 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+body > header ul.mainMenu li {
+	display: flex;
+}
+
+body > header ul.mainMenu li a {
+	position: relative;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: OpenSansCondensed;
+	font-size: 18px;
+	font-weight: lighter;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: #ddd;
+	transition: all .2s ease;
+}
+body > header ul.mainMenu li a:after {
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: #fff;
+	opacity: 0;
+	position: absolute;
+	bottom: 10px;
+	transition: all .1s ease, opacity .025s ease-out;
+	transition-delay: 0, .5s;
+}
+body > header ul.mainMenu li a:hover,
+body > header ul.mainMenu li a:focus,
+body > header ul.mainMenu li a.active {
+	color: #fff;
+}
+body > header ul.mainMenu li a:hover:after,
+body > header ul.mainMenu li a:focus:after {
+	opacity: 1;
+	width: 20px;
+	transition-delay: 0,0;
+}
+body > header ul.mainMenu li a.active:after {
+	opacity: 1;
+	width: 50%;
+}
+
+

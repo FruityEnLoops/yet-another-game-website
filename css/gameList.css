@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+.gameList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.gameThumbnail {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+.pageContent > .gameThumbnail {
+	display: inline-block;
+}
+
+.gameThumbnail a {
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	color: #121618;
+	overflow: hidden;
+}
+.gameThumbnail:nth-child(4n) a,
+.gameThumbnail:nth-child(4n-1) a {
+	flex-direction: row-reverse;
+}
+.gameThumbnail:nth-child(4n) a section:before,
+.gameThumbnail:nth-child(4n-1) a section:before {
+	left: auto;
+	right: -20px;
+	transform: scaleX(-1) translateY(-50%);
+}
+.gameThumbnail {
+	background-color: #fff;
+}
+.gameThumbnail a {
+	background-image: linear-gradient(15deg, #121618ff 40%, #12161855 80%);
+	background-size: contain;
+	transition: all 1s ease;
+}
+.gameThumbnail a:hover img {
+	opacity: 1;
+}
+.gameThumbnail a img {
+	min-height: 300px;
+	object-fit: cover;
+	mix-blend-mode: normal;
+	opacity: .8;
+	background-color: #ccc;
+	filter: contrast(1.1);
+}
+
+.gameThumbnail a img,
+.gameThumbnail a section {
+	width: 50%;
+	flex-grow: 1;
+}
+.gameThumbnail a img,
+.gameThumbnail a section,
+.gameThumbnail a section:before {
+	transition: all .7s cubic-bezier(.190, 1.000, .220, 1.000), width .2s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+
+
+.gameThumbnail a section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 20px;
+	font-size: 16px;
+	background-color: #f9f9f9;
+}
+.gameThumbnail a section:before {
+	content: '';
+	position: absolute;
+	left: -20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right:20px solid #f9f9f9;
+}
+.gameThumbnail a section h4 {
+	text-align: center;
+	font-family: Cairo;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 0 0 15px;
+	white-space: normal;
+}
+
+.gameThumbnail a section h4:after {
+	transform: scaleX(-1);
+}
+.gameThumbnail a section ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: #555;
+}
+.gameThumbnail a:hover img {
+	width: 48%;
+}
+.gameThumbnail a:hover section {
+	background-color: #fff;
+}
+.gameThumbnail a:hover section:before {
+	border-right-color: #fff;
+}
+@media (max-width: 1200px) {
+	.gameThumbnail a img {
+		min-height: calc(25vw - 20px);
+	}
+	.gameThumbnail a section {
+		font-size: 14px;
+	}
+	.gameThumbnail a section h4 {
+		font-size: 25px;
+		letter-spacing: 0;
+	}
+}
+@media (max-width: 900px) {
+	.gameThumbnail a section h4 {
+		font-size: 20px;
+		letter-spacing: 0;
+	}
+	.gameThumbnail a section {
+		font-size: 12px;
+	}
+}
+@media (max-width: 780px) {
+	.gameThumbnail {
+		width: 100%;
+	}
+	.gameThumbnail a {
+		height: 200px;
+	}
+	.gameThumbnail:nth-child(4n) a,
+	.gameThumbnail:nth-child(4n-1) a {
+		flex-direction: row;
+	}
+	.gameThumbnail:nth-child(4n) a section:before,
+	.gameThumbnail:nth-child(4n-1) a section:before {
+		left: -20px;
+		right: auto;
+		transform: translateY(-50%);
+	}
+	.gameThumbnail:nth-child(2n) a {
+		flex-direction: row-reverse;
+	}
+	.gameThumbnail:nth-child(2n) a section:before {
+		left: auto;
+		right: -20px;
+		transform: scaleX(-1) translateY(-50%);
+	}
+}
+@media (max-width: 480px) {
+	.gameThumbnail a {
+		height: auto;
+		flex-direction: column;
+	}
+	.gameThumbnail:nth-child(n) a {
+		flex-direction: column;
+	}
+	.gameThumbnail a img,
+	.gameThumbnail a section {
+		height: 150px;
+		width: 100%;
+		font-size: 16px;
+	}
+	.gameThumbnail a section {
+		height: 150px;
+	}
+	.gameThumbnail a section h4 {
+		font-size: 25px;
+		letter-spacing: 3px;
+	}
+	.gameThumbnail a section:before {
+		content: none;
+	}
+	.gameThumbnail a:hover img,
+	.gameThumbnail a:hover section {
+		width: 100%;
+	}
+
+}

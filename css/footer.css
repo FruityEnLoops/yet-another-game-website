@@ -1,0 +1,55 @@
+
+body > footer {
+	position: relative;
+	padding: 10px;
+	background-image: url('../images/header-sj-0fmiFfzRhQY-unsplash.jpg');
+	background-size: cover;
+	background-position: center;
+	z-index: 10;
+	color: #ccc;
+	text-align: center;
+}
+body > footer:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -10px;
+	height: 0;
+	width: 100%;
+	background-image: linear-gradient(#121618, #121618), linear-gradient(-45deg, transparent 75%, #121618 75%), linear-gradient(45deg, transparent 75%, #121618 75%);
+	background-position: 0 0, 0 0, 0 0, 0 100%, 0 100%;
+	background-size: auto auto, 15px 15px, 15px 15px, 15px 15px, 15px 15px;
+	background-clip: padding-box, border-box, border-box, border-box, border-box;
+	background-origin: padding-box, border-box, border-box, border-box, border-box;
+	border: solid transparent;
+	border-width: 5px 0;
+	background-repeat: repeat, repeat-x, repeat-x, repeat-x, repeat-x;
+	transform: scaleY(-1);
+}
+body > footer:before {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(0deg, #121618ee, #121618);
+}
+body > footer a {
+	color: #fff;
+}
+body > footer a:hover {
+	color: #edad4a;
+}
+body > footer > div {
+	z-index: 10;
+}
+body > footer > div:first-child {
+	background-image: url('../images/logo.svg');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 80px;
+	padding-top: 20px;
+}

@@ -1,0 +1,210 @@
+@font-face {
+	font-family: GravitasOne;
+	src: url("./fonts/GravitasOne-Regular.ttf");
+	font-weight: normal;
+}
+@font-face {
+	font-family: OpenSansCondensed;
+	src: url("./fonts/OpenSansCondensed-Light.ttf");
+	font-weight: lighter;
+}
+@font-face {
+	font-family: OpenSansCondensed;
+	src: url("./fonts/OpenSansCondensed-Bold.ttf");
+	font-weight: bold;
+}
+
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	margin: 0;
+	/* height: 100%; */
+	padding: 0;
+	background: #eee;
+}
+body {
+	min-height: 100vh;
+	color: black;
+	font-size: 14px;
+	font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+.pageContainer,
+body > footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 40px;
+}
+
+.pageContainer {
+	background-image: url('../images/gaming-bg.png');
+	background-size: 110%;
+	background-blend-mode:saturation;
+	background-position: center -20px;
+	background-repeat: repeat-y;
+	color: #121618;
+	padding-bottom: 90px;
+	flex-grow: 1;
+}
+.pageTitle {
+	min-height: 50px;
+}
+.pageTitle, .pageContent, body > footer > div {
+	width: 100%;
+	max-width: 1200px;
+}
+.pageTitle h1 {
+	margin-top: 50px;
+	margin-bottom: 40px;
+	font-size: 40px;
+	font-family: OpenSansCondensed;
+	text-transform: uppercase;
+	position: relative;
+	padding-bottom: 10px;
+	/* color: rgb(200, 0, 0); */
+	text-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+.pageTitle h1:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 1px;
+	background-color: currentColor;
+	width: 80px;
+}
+.pageContent {
+	font-size: 16px;
+}
+a {
+	color: #e2952d;
+}
+a:hover {
+	color: #edad4a;
+}
+.is-loading {
+	position:relative;
+	min-height: 200px;
+}
+.is-loading * {
+	display: none;
+}
+.is-loading:before {
+	content: '';
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: 1;
+}
+.is-loading:after {
+	content: '	';
+	position: absolute;
+	top:50%;
+	left:50%;
+	width: 50px;
+	height: 50px;
+	border: 1px black solid;
+	border-top-color: rgba(0,0,0,.1);
+	z-index: 2;
+	border-radius: 50%;
+	animation: rotate .5s linear infinite;
+	transform-origin: center;
+}
+@keyframes rotate {
+	0% {
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
+@keyframes fadeIn{
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes slide {
+	from { transform: translateX(-300px); }
+}
+@keyframes slideUp{
+	from { transform: translateY(20px); }
+	to { transform: translateY(0); }
+}
+@keyframes slideBg {
+	to { background-position: -200% center; }
+}
+@keyframes zoomOut{
+	from { transform: scale(.7); }
+	to { transform: scale(1); }
+}
+@keyframes burn {
+	to { transform: translateX(3px) skew(-13deg); }
+}
+
+.searchBar input[type=text] {
+	background-color: rgba(40, 0, 0, 0.7);
+	color: white;
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+}
+
+/* TODO : améliorer le css du bouton */
+.searchBar button {
+	padding: 6px 10px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+  
+.searchBar button:hover {
+	background: #ccc;
+}
+
+.searchBar {
+	z-index: 2;
+	margin-bottom: 10px;;
+}
+
+.loader{
+	width: 10rem;
+	height: 10rem;
+	position: fixed;
+    border: 10px solid white;
+    border-top: 12px solid black;
+    border-radius: 100%;
+    margin: auto;
+	visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+
+.loader.display {
+    visibility: visible;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pageContainer.blur{
+	animation: image_blur 0.5s forwards;
+}
+
+@keyframes image_blur {
+    from { filter: blur(0px);}
+    to { filter: blur(12px);}
+}
